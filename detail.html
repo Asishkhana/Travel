@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Place Details - ExploreWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f0f2f5;
+    }
+    .header {
+      background: url('https://source.unsplash.com/1600x400/?travel,landscape') no-repeat center center/cover;
+      height: 250px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 6px #000;
+      margin-bottom: 30px;
+    }
+    .place-image {
+      max-height: 400px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="places.html">ExploreWorld</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="places.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="login.html" class="nav-link">Logout</a></li>
+<           <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header class="header" id="placeName">
+    Loading...
+  </header>
+
+  <main class="container">
+    <img src="" alt="" id="placeImg" class="place-image" />
+    <p id="placeDescription" style="font-size: 1.2rem;"></p>
+
+    <a href="places.html" class="btn btn-secondary mt-3">Back to Places</a>
+  </main>
+
+  <script>
+    // Data for each place
+    const placesData = {
+      newyork: {
+        name: "New York",
+        img: "https://simple.wikipedia.org/wiki/New_York_City",
+        description: "The city that never sleeps, famous for Times Square and Statue of Liberty."
+      },
+      bali: {
+        name: "Bali",
+        img: "https://source.unsplash.com/800x500/?bali,beach",
+        description: "A tropical paradise with pristine beaches and vibrant culture."
+      },
+      alps: {
+        name: "The Alps",
+        img: "https://source.unsplash.com/800x500/?alps,mountains",
+        description: "Snow-capped peaks perfect for skiing, hiking, and nature lovers."
+      },
+      paris: {
+        name: "Paris",
+        img: "https://source.unsplash.com/800x500/?paris",
+        description: "The city of love, art, and the iconic Eiffel Tower."
+      },
+      maldives: {
+        name: "Maldives",
+        img: "https://source.unsplash.com/800x500/?maldives",
+        description: "Crystal-clear waters and luxury overwater bungalows."
+      },
+      rockymountains: {
+        name: "Rocky Mountains",
+        img: "https://source.unsplash.com/800x500/?rockymountains",
+        description: "Expansive wilderness and breathtaking mountain views."
+      }
+    };
+
+    // Function to get URL param
+    function getQueryParam(param) {
+      const urlParams = new URLSearchParams(window.location.search);
+      return urlParams.get(param);
+    }
+
+    const placeKey = getQueryParam('place');
+    const placeNameEl = document.getElementById('placeName');
+    const placeImgEl = document.getElementById('placeImg');
+    const placeDescEl = document.getElementById('placeDescription');
+
+    if (placeKey && placesData[placeKey]) {
+      const place = placesData[placeKey];
+      placeNameEl.textContent = place.name;
+      placeImgEl.src = place.img;
+      placeImgEl.alt = place.name;
+      placeDescEl.textContent = place.description;
+    } else {
+      placeNameEl.textContent = "Place Not Found";
+      placeDescEl.textContent = "Sorry, we couldn't find details for this destination.";
+      placeImgEl.style.display = "none";
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

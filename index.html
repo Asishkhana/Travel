@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Explore Places - ExploreWorld</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background: #f8f9fa;
+
+    }
+
+    .card-img-top {
+      height: 180px;
+      object-fit: cover;
+    }
+
+    header {
+      background: url('https://source.unsplash.com/1600x400/?travel,landscape') no-repeat center center/cover;
+      height: 300px;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 6px #000;
+    }
+
+    .card:hover {
+      transform: scale(1.02);
+      transition: 0.3s ease-in-out;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.75rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="background-logo"></div>
+<body>
+  
+
+  
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">ExploreWorld</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="profile.html" class="nav-link">Profile</a></li>
+          <li class="nav-item"><a href="login.html" class="nav-link">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header>
+    Explore Your Next Destination
+  </header>
+
+  <!-- Main -->
+  <main class="container my-5">
+
+    <div class="mb-4 d-flex justify-content-between align-items-center">
+      <h2>
+        Popular Destinations
+        <span class="badge bg-info text-dark">6 places</span>
+      </h2>
+      <select id="filter" class="form-select w-auto">
+        <option value="all" selected>All</option>
+        <option value="city">City</option>
+        <option value="beach">Beach</option>
+        <option value="mountain">Mountain</option>
+      </select>
+    </div>
+
+    <div class="row g-4" id="placesList">
+      <!-- City -->
+      <div class="col-md-4 place-card" data-type="city">
+        <div class="card shadow-sm">
+          <img src="newyork.jpeg" class="card-img-top" alt="New York" data-bs-toggle="tooltip" title="Explore New York" />
+          <div class="card-body">
+            <h5 class="card-title">New York</h5>
+            <p class="card-text">The city that never sleeps, famous for Times Square and Statue of Liberty.</p>
+            <a href="https://www.expedia.com/New-York.dx178293" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach -->
+      <div class="col-md-4 place-card" data-type="beach">
+        <div class="card shadow-sm">
+          <img src="bali.jpg" class="card-img-top" alt="Bali" data-bs-toggle="tooltip" title="Explore Bali" />
+          <div class="card-body">
+            <h5 class="card-title">Bali</h5>
+            <p class="card-text">A tropical paradise with pristine beaches and vibrant culture.</p>
+            <a href="https://www.expedia.com/" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mountain -->
+      <div class="col-md-4 place-card" data-type="mountain">
+        <div class="card shadow-sm">
+          <img src="alps.jpeg" class="card-img-top" alt="Alps" data-bs-toggle="tooltip" title="Explore the Alps" />
+          <div class="card-body">
+            <h5 class="card-title">The Alps</h5>
+            <p class="card-text">Snow-capped peaks perfect for skiing, hiking, and nature lovers.</p>
+            <a href="https://www.expedia.com/" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- City -->
+      <div class="col-md-4 place-card" data-type="city">
+        <div class="card shadow-sm">
+          <img src="paris.jpeg" class="card-img-top" alt="Paris" data-bs-toggle="tooltip" title="Explore Paris" />
+          <div class="card-body">
+            <h5 class="card-title">Paris</h5>
+            <p class="card-text">The city of love, art, and the iconic Eiffel Tower.</p>
+            <a href="https://www.expedia.com/" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Beach -->
+      <div class="col-md-4 place-card" data-type="beach">
+        <div class="card shadow-sm">
+          <img src="maldives.jpeg#"card-img-top" alt="Maldives" data-bs-toggle="tooltip" title="Explore Maldives" />
+          <div class="card-body">
+            <h5 class="card-title">Maldives</h5>
+            <p class="card-text">Crystal-clear waters and luxury overwater bungalows.</p>
+            <a href="https://www.expedia.com/" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mountain -->
+      <div class="col-md-4 place-card" data-type="mountain">
+        <div class="card shadow-sm">
+          <img src="rock.jpeg" class="card-img-top" alt="Rocky Mountains" data-bs-toggle="tooltip" title="Explore Rocky Mountains" />
+          <div class="card-body">
+            <h5 class="card-title">Rocky Mountains</h5>
+            <p class="card-text">Expansive wilderness and breathtaking mountain views.</p>
+            <a href="https://www.expedia.com/" class="btn btn-outline-primary btn-sm">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="my-5">
+      <h3>Frequently Asked Questions</h3>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              How do I book a destination?
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              You can book directly from the destination card by clicking "Learn More" and following the instructions.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Toast -->
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div id="filterToast" class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+      <div class="d-flex">
+        <div class="toast-body">
+          Filter applied successfully.
+        </div>
+        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-white text-center py-4 mt-5">
+    &copy; 2025 ExploreWorld. All rights reserved.
+  </footer>
+
+  <!-- Bootstrap JS + Script -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const filter = document.getElementById('filter');
+    const places = document.querySelectorAll('.place-card');
+    const toast = new bootstrap.Toast(document.getElementById('filterToast'));
+
+    filter.addEventListener('change', () => {
+      const val = filter.value;
+      places.forEach(place => {
+        place.style.display = (val === 'all' || place.dataset.type === val) ? '' : 'none';
+      });
+      toast.show();
+    });
+
+    // Enable tooltips
